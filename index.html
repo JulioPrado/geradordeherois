@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gerador De Heróis</title>
+	<link rel="stylesheet" href="estilo.css">
+	<script  src="js.js"></script>
+</head>
+<body>
+	<div id="tela">
+		<h1>
+			Gerador de Heróis para Mutantes&Malfeitores 3ªed
+		</h1>
+		<div>
+			<button style="background-color: red; color: white;" onclick="randomAte(5)">
+				Gerar herói
+			</button>
+			<input onmousemove="atualizaNP()" type="range" id="nivelPoder" name="nivelPoder" min="1" max="20" >
+			<span>
+				NP:
+			</span>
+			<span id="NumeroNP">
+				11
+			</span>
+			 
+		</div>
+		<div>
+			<p>
+				Pontos para distribuir: 
+				<span id="pontosDistribuir">
+					165
+				</span>
+				<br><span>(pdms podem exceder esse limite)</span>
+			</p>
+			<h5>LIMITES</h5>
+			<span>
+				Ataque + Efeito: 
+				<span class="DobroNP">
+				</span>
+				<br>
+				<span>
+					(se efeito não precisar de ataque, limite=NP).
+				</span>
+			</span>
+			<br>
+			<span>
+				Esquiva/Aparar + Resistência:
+				<span class="DobroNP">
+				</span>
+			</span>
+			<br>
+			<span>
+				Fortitude + Vontade: 
+				<span class="DobroNP">
+				</span>
+			</span>
+			<br>
+			<span>
+			Habilidade + Perícia + Vantagem: 
+				<span id="limitePericia">
+					21
+				</span>
+			</span>
+		</div>
+		<hr>
+		<div id="ficha" class="borda">
+			<input type="text" style="display: block; margin: 0 auto;" placeholder="Nome do herói">
+			<h3 class="right">NP: 0</h3>
+			<p>Conceito: 
+				<span>
+					Exemplo
+				</span>
+				
+				Descritor:
+				<span>
+					Exemplo
+				</span>
+			</p>
+			<p>
+				Gênero: 
+				<span>
+					M/F
+				</span>
+
+				Idade: 
+				<span>
+					50
+				</span>
+
+				Altura: 
+				<span>
+					1,95
+				</span>
+				Olhos: 
+				<span>
+					[cores]
+				</span>
+				Cabelo: 
+				<span>
+					[cores]
+				</span>
+			</p>
+			<p>
+				Força:
+				<span>00</span>
+				Agilidade:
+				<span>00</span>
+				Luta:
+				<span>00</span>
+				Prontidão:
+				<span>00</span>
+			</p>
+			<p>
+				Vigor:
+				<span>00</span>
+				Destreza:
+				<span>00</span>
+				Intelecto:
+				<span>00</span>
+				Presença:
+				<span>00</span>
+			</p>
+			<div class="right borda">
+				<h5>Defesas</h5>
+				<p>
+					Esquiva(Agi): <span>0</span>
+					<br>
+					Aparar(Lut): <span>0</span>
+					<br>
+					Fortitude(Vig): <span>0</span>
+					<br>
+					Resistência(Vig): <span>0</span>
+					<br>
+					Vontade(Pro): <span>0</span>
+				</p>
+			</div>
+			<div class="borda">
+				<h5>Ataques</h5>
+				<p>ataque CaC 
+					<span>0</span>
+					<br><span> descrição ausydausyd  uyasd uyg qudyasudy u gqudgausdyg asdiausd qu.
+					</span>
+				</p>
+				<p>ataque a dist
+					<span>0</span>
+					<br><span> descrição ausydausyd  uyasd uyg qudyasudy u gqudgausdyg asdiausd qu.
+					</span>
+				</p>
+				<p>terceiro ataque
+					<span>0</span>
+					<br><span> descrição ausydausyd  uyasd uyg qudyasudy u gqudgausdyg asdiausd qu.
+					</span>
+				</p>
+			</div>
+			<div>
+				<h5>Vantagens</h5>
+				<span>nomeVantagem 0 ,</span>
+				<span>nomeVantagem 0 ,</span>
+				<span>nomeVantagem 0 ,</span>
+				<span>nomeVantagem 0 ,</span>
+			</div>
+			<div class="borda">
+				<h5>Perícias</h5>
+				<span>Pericia 5 ,</span>
+				<span>Pericia 5 ,</span>
+				<span>Pericia 5 ,</span>
+				<span>Pericia 5 ,</span>
+			</div>
+			<div>
+				<h5>Poderes & dispositivos</h5>
+				<p>nomePoder
+					<span>0</span>
+					<br><span> descrição ausydausyd  uyasd uyg qudyasudy u gqudgausdyg asdiausd qu.
+					</span>
+				</p>
+				<p>nomePoder
+					<span>0</span>
+					<br><span> descrição ausydausyd  uyasd uyg qudyasudy.
+					</span>
+				</p>
+				<p>nomePoder
+					<span>0</span>
+					<br><span> descrição ausydausyd  uyasd uyg qudyasudy u.
+					</span>
+				</p>
+				<p>nomePoder
+					<span>0</span>
+					<br><span> descrição ausydausyd  uyasd uyg qudyasudy.
+					</span>
+				</p>
+				<p>nomePoder
+					<span>0</span>
+					<br><span> descrição ausydausyd  uyasd uyg qudyasudy udiaushd.
+					</span>
+				</p>
+			</div>
+
+
+
+		</div>
+	</div>
+</body>
+</html>

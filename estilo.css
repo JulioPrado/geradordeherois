@@ -1,0 +1,71 @@
+
+body{
+	font: "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif; 
+	display: block;
+	height: 100%;
+	width: 600px;
+	margin: 0px;
+  	padding: 0px;
+  	border: 0;
+  	background-color: black;
+}
+
+.clear{ 
+    clear:both; 
+} 
+
+.right{ 
+    float: right;
+    text-align: right;
+} 
+
+.left{ 
+    float: left; 
+}
+
+h1{ 
+    font-size: 2.2em; 
+} 
+     
+h2{ 
+    font-size: 2.0em;     
+} 
+     
+h3{ 
+    font-size: 1.8em; 
+} 
+     
+h4{ 
+    font-size: 1.6em;     
+} 
+     
+h5{ 
+    font-size: 1.4em; 
+    margin: 0px;  
+    padding: 0px;  
+} 
+     
+p{ 
+    font-size: 1.2em;     
+}
+
+div#tela{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding:10px;
+	background-color: white;
+}
+
+/*
+------------FICHA------------------------------
+*/
+
+div#ficha{
+	margin-top: 10px;
+}
+
+.borda{
+	border: 1px solid black;
+	padding: 5px;
+}
