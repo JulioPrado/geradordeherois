@@ -10,11 +10,12 @@
 		<h1>
 			Gerador de Heróis para Mutantes&Malfeitores 3ªed
 		</h1>
-		<div>
-			<button style="background-color: red; color: white;" onclick="randomAte(5)">
+		<div id="botaoGerar">
+			<button style="background-color: red; color: white;" onclick="gerarHeroi();">
 				Gerar herói
 			</button>
-			<input onmousemove="atualizaNP()" type="range" id="nivelPoder" name="nivelPoder" min="1" max="20" >
+			
+			<input onclick="atualizaNP()" type="range" id="nivelPoder" name="nivelPoder" min="1" max="20" >
 			<span>
 				NP:
 			</span>
@@ -23,11 +24,15 @@
 			</span>
 			 
 		</div>
+		<div id="botaoImprimir" style="display: none;">
+			<button style="background-color: red; color: white;" onclick="tentarNovamente()">
+					Tentar novamente
+			</button>
+		</div>
 		<div>
 			<p>
 				Pontos para distribuir: 
 				<span id="pontosDistribuir">
-					165
 				</span>
 				<br><span>(pdms podem exceder esse limite)</span>
 			</p>
@@ -57,80 +62,98 @@
 			<span>
 			Habilidade + Perícia + Vantagem: 
 				<span id="limitePericia">
-					21
 				</span>
 			</span>
 		</div>
-		<hr>
-		<div id="ficha" class="borda">
-			<input type="text" style="display: block; margin: 0 auto;" placeholder="Nome do herói">
-			<h3 class="right">NP: 0</h3>
-			<p>Conceito: 
-				<span>
-					Exemplo
+		<div id="ficha" style="display: none;" class="borda">
+			
+			<div id="nomeHeroi">
+				<form method="get">
+					<input type="text" id="inputNome" placeholder="Nome do herói">
+					<button onclick="imprimirFicha()" style="background-color: blue; color: white;">
+					Finalizar e imprimir
+					</button>
+				</form>
+			</div>
+
+			<h3 class="right">
+				NP: 
+				<span id="fichaNp">
+					0
 				</span>
+			</h3>
+			
+			<p>
+				<!-- 
+				Conceito: 
+				<span id="fichaConceito">
+					
+				</span>
+				-->
 				
 				Descritor:
-				<span>
-					Exemplo
+				<span id="fichaDescritor">
+					
 				</span>
 			</p>
 			<p>
 				Gênero: 
-				<span>
+				<span id="fichaGenero">
 					M/F
 				</span>
 
 				Idade: 
-				<span>
-					50
+				<span id="fichaIdade">
+					
 				</span>
 
 				Altura: 
-				<span>
-					1,95
-				</span>
-				Olhos: 
-				<span>
-					[cores]
-				</span>
-				Cabelo: 
-				<span>
-					[cores]
+				<span id="fichaAltura">
+					
 				</span>
 			</p>
 			<p>
 				Força:
-				<span>00</span>
+				<span id="fichaForca"></span>
 				Agilidade:
-				<span>00</span>
+				<span id="fichaAgilidade"></span>
 				Luta:
-				<span>00</span>
+				<span id="fichaLuta"></span>
 				Prontidão:
-				<span>00</span>
+				<span id="fichaProntidao"></span>
 			</p>
 			<p>
 				Vigor:
-				<span>00</span>
+				<span id="fichaVigor"></span>
 				Destreza:
-				<span>00</span>
+				<span id="fichaDestreza"></span>
 				Intelecto:
-				<span>00</span>
+				<span id="fichaIntelecto"></span>
 				Presença:
-				<span>00</span>
+				<span id="fichaPresenca"></span>
 			</p>
 			<div class="right borda">
 				<h5>Defesas</h5>
 				<p>
-					Esquiva(Agi): <span>0</span>
+					Esquiva(Agi): 
+					<span id="fichaEsquiva">
+					</span>
 					<br>
-					Aparar(Lut): <span>0</span>
+					Aparar(Lut): 
+					<span id="fichaAparar">
+					</span>
 					<br>
-					Fortitude(Vig): <span>0</span>
+					Fortitude(Vig):
+					<span id="fichaFortitude">
+					</span>
 					<br>
-					Resistência(Vig): <span>0</span>
+					Resistência(Vig):
+					<span id="fichaResistencia">
+					</span>
 					<br>
-					Vontade(Pro): <span>0</span>
+					Vontade(Pro): 
+					<span id="fichaVontade">
+					</span>
 				</p>
 			</div>
 			<div class="borda">
@@ -145,11 +168,6 @@
 					<br><span> descrição ausydausyd  uyasd uyg qudyasudy u gqudgausdyg asdiausd qu.
 					</span>
 				</p>
-				<p>terceiro ataque
-					<span>0</span>
-					<br><span> descrição ausydausyd  uyasd uyg qudyasudy u gqudgausdyg asdiausd qu.
-					</span>
-				</p>
 			</div>
 			<div>
 				<h5>Vantagens</h5>
@@ -158,40 +176,17 @@
 				<span>nomeVantagem 0 ,</span>
 				<span>nomeVantagem 0 ,</span>
 			</div>
-			<div class="borda">
+			<hr>
+			<div>
 				<h5>Perícias</h5>
-				<span>Pericia 5 ,</span>
-				<span>Pericia 5 ,</span>
-				<span>Pericia 5 ,</span>
-				<span>Pericia 5 ,</span>
+				<span id="fichaPericias"></span>
 			</div>
+			<hr>
 			<div>
 				<h5>Poderes & dispositivos</h5>
-				<p>nomePoder
-					<span>0</span>
-					<br><span> descrição ausydausyd  uyasd uyg qudyasudy u gqudgausdyg asdiausd qu.
-					</span>
-				</p>
-				<p>nomePoder
-					<span>0</span>
-					<br><span> descrição ausydausyd  uyasd uyg qudyasudy.
-					</span>
-				</p>
-				<p>nomePoder
-					<span>0</span>
-					<br><span> descrição ausydausyd  uyasd uyg qudyasudy u.
-					</span>
-				</p>
-				<p>nomePoder
-					<span>0</span>
-					<br><span> descrição ausydausyd  uyasd uyg qudyasudy.
-					</span>
-				</p>
-				<p>nomePoder
-					<span>0</span>
-					<br><span> descrição ausydausyd  uyasd uyg qudyasudy udiaushd.
-					</span>
-				</p>
+				<span id="fichaPoderes">
+					
+				</span>
 			</div>
 
 

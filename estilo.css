@@ -1,4 +1,8 @@
 
+html{
+	scroll-behavior: smooth;
+}
+
 body{
 	font: "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif; 
 	display: block;
@@ -7,7 +11,6 @@ body{
 	margin: 0px;
   	padding: 0px;
   	border: 0;
-  	background-color: black;
 }
 
 .clear{ 
