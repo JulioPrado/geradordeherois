@@ -20,6 +20,7 @@ div#tela{
 
 div#telaInicial{
 	margin-bottom: 60px;
+	padding-left: 10px;
 }
 
 
@@ -84,6 +85,7 @@ footer a:hover{
 div#ficha{
 	margin-top: 10px;
 	margin-bottom: 60px;
+	padding: 10px;
 }
 
 .negrito{
