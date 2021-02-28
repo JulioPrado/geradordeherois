@@ -13,7 +13,7 @@ body{
 }
 
 div#tela{
-	max-width: 600px;
+	width: 600px;
 	display: block;
 	margin: 0 auto;
 }
