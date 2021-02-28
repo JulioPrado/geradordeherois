@@ -111,20 +111,29 @@ function gerarHeroi(){
 	 	preencherCampo('distGrad',heroi.pericias[1].grad)/* perícias [1] sempre é a cac */
 	 	
 	 	for (var i = 0; i<heroi.pericias.length; i++) {
-	 		document.getElementById('fichaPericias').append(heroi.pericias[i].nome+' '+heroi.pericias[i].grad+', ');
+	 		document.getElementById('fichaPericias').append(heroi.pericias[i].nome+' '+heroi.pericias[i].grad);
+	 		if (i<heroi.pericias.length-1) {
+	 			document.getElementById('fichaPericias').append(', ');
+	 		}else {document.getElementById('fichaPericias').append('.');}
 	 	}
 
 	 	for (var i = 0; i<heroi.poderes.length; i++) {
-	 		document.getElementById('fichaPoderes').append(heroi.poderes[i].nome+' '+heroi.poderes[i].grad + ', ');
+	 		document.getElementById('fichaPoderes').append(heroi.poderes[i].nome+' '+heroi.poderes[i].grad);
 	 		if (heroi.poderes[i].alcance=='Perto'){
-	 			document.getElementById('cacPoderes').append(heroi.poderes[i].nome+' '+heroi.poderes[i].grad + ', ');
+	 			document.getElementById('cacPoderes').append(heroi.poderes[i].nome+' '+heroi.poderes[i].grad);
 	 		} else if(heroi.poderes[i].alcance=='À Distância'){
-	 			document.getElementById('distPoderes').append(heroi.poderes[i].nome+' '+heroi.poderes[i].grad + ', ');
+	 			document.getElementById('distPoderes').append(heroi.poderes[i].nome+' '+heroi.poderes[i].grad);
 	 		}
+	 		if (i<heroi.poderes.length-1) {
+	 			document.getElementById('fichaPoderes').append(', ');
+	 		}else {document.getElementById('fichaPoderes').append('.');}
 	 	}
 
 	 	for (var i = 0; i<heroi.vantagens.length; i++) {
-	 		document.getElementById('fichaVantagens').append(heroi.vantagens[i].nome+' ('+heroi.vantagens[i].descricao+'), ');
+	 		document.getElementById('fichaVantagens').append(heroi.vantagens[i].nome+' ('+heroi.vantagens[i].descricao+')');
+	 		if (i<heroi.vantagens.length-1) {
+	 			document.getElementById('fichaVantagens').append(', ');
+	 		}else {document.getElementById('fichaVantagens').append('.');}
 	 	}
 
 	 	document.getElementById('fichaForca').innerHTML=heroi.for;
@@ -744,80 +753,80 @@ function gerarHeroi(){
 
  /*-------------------------------------------------vantagens */
  	listaVantagens.push(
- 		{'nome':'Ação em Movimento', 'descricao':'Mova-se tanto antes quanto depois de sua ação padrão.'},
- 		{'nome':'Agarrar Aprimorado', 'descricao':'Faça ataques de agarrar com apenas uma mão.'},
- 		{'nome':'Agarrar Preciso', 'descricao':'Substitui Des por For em ataques para agarrar.'},
- 		{'nome':'Agarrar Rápido', 'descricao':'Quando acerta um ataque desarmado, pode fazer um teste de agarrar como ação livre.'},
- 		{'nome':'Ambiente Favorito', 'descricao':'Bônus de circunstância no ataque ou na defesa em determinado ambiente.'},
- 		{'nome':'Arma Improvisada', 'descricao':'Use a perícia Combate Desarmado com armas improvisadas, com bônus de dano de +1.'},
- 		{'nome':'Armação', 'descricao':'Transfira o benefício de uma perícia de interação para um aliado.'},
- 		{'nome':'Ataque à Distância', 'descricao':'Bônus de +1 em testes de ataque à distância por graduação.'},
- 		{'nome':'Ataque Acurado', 'descricao':'Troque a CD do efeito por um bônus de ataque.'},
+ 		{'nome':'Ação em Movimento', 'descricao':'Mova-se tanto antes quanto depois de sua ação padrão'},
+ 		{'nome':'Agarrar Aprimorado', 'descricao':'Faça ataques de agarrar com apenas uma mão'},
+ 		{'nome':'Agarrar Preciso', 'descricao':'Substitui Des por For em ataques para agarrar'},
+ 		{'nome':'Agarrar Rápido', 'descricao':'Quando acerta um ataque desarmado, pode fazer um teste de agarrar como ação livre'},
+ 		{'nome':'Ambiente Favorito', 'descricao':'Bônus de circunstância no ataque ou na defesa em determinado ambiente'},
+ 		{'nome':'Arma Improvisada', 'descricao':'Use a perícia Combate Desarmado com armas improvisadas, com bônus de dano de +1'},
+ 		{'nome':'Armação', 'descricao':'Transfira o benefício de uma perícia de interação para um aliado'},
+ 		{'nome':'Ataque à Distância', 'descricao':'Bônus de +1 em testes de ataque à distância por graduação'},
+ 		{'nome':'Ataque Acurado', 'descricao':'Troque a CD do efeito por um bônus de ataque'},
  		{'nome':'Ataque Corpo-a-Corpo', 'descricao':'Bônus de +1 em testes de ataque corpo-a-corpo por graduação'},
  		{'nome':'Ataque Defensivo', 'descricao':'Troque um bônus de ataque por um bônus de defesa ativa'},
  		{'nome':'Ataque Dominó', 'descricao':'Ganhe um ataque extra quando incapacitar um capanga'},
- 		{'nome':'Ataque Imprudente', 'descricao':'Troque defesa ativa por um bônus de ataque.'},
- 		{'nome':'Ataque Poderoso', 'descricao':'Troque bônus de ataque por bônus de efeito.'},
- 		{'nome':'Ataque Preciso', 'descricao':'Ignore penalidades em testes de ataque devido a cobertura ou camuflagem.'},
- 		{'nome':'Crítico Aprimorado', 'descricao':'+1 na ameaça de crítico com um ataque específico por graduação.'},
- 		{'nome':'Defesa Aprimorada', 'descricao':'Bônus de +2 em uma defesa ativa quando você usa a ação defender-se.'},
+ 		{'nome':'Ataque Imprudente', 'descricao':'Troque defesa ativa por um bônus de ataque'},
+ 		{'nome':'Ataque Poderoso', 'descricao':'Troque bônus de ataque por bônus de efeito'},
+ 		{'nome':'Ataque Preciso', 'descricao':'Ignore penalidades em testes de ataque devido a cobertura ou camuflagem'},
+ 		{'nome':'Crítico Aprimorado', 'descricao':'+1 na ameaça de crítico com um ataque específico por graduação'},
+ 		{'nome':'Defesa Aprimorada', 'descricao':'Bônus de +2 em uma defesa ativa quando você usa a ação defender-se'},
  		{'nome':'Derrubar Aprimorado', 'descricao':'Sem penalidade para usar a ação derrubar'},
  		{'nome':'Desarmar Aprimorado', 'descricao':'Sem penalidade para usar a ação desarmar'},
- 		{'nome':'Esquiva Fabulosa', 'descricao':'Você não fica vulnerável quando surpreso ou desatento.'},
- 		{'nome':'Estrangular', 'descricao':'Sufoca um oponente que você tenha agarrado.'},
+ 		{'nome':'Esquiva Fabulosa', 'descricao':'Você não fica vulnerável quando surpreso ou desatento'},
+ 		{'nome':'Estrangular', 'descricao':'Sufoca um oponente que você tenha agarrado'},
  		{'nome':'Evasão', 'descricao':'Bônus de circunstância para evitar ataques de área'},
- 		{'nome':'Imobilizar Aprimorado', 'descricao':'Penalidade de circunstância de –5 para escapar de você.'},
+ 		{'nome':'Imobilizar Aprimorado', 'descricao':'Penalidade de circunstância de –5 para escapar de você'},
  		{'nome':'Iniciativa Aprimorada', 'descricao':'Bônus de +4 por graduação em testes de iniciativa'},
- 		{'nome':'Luta no Chão', 'descricao':'Sem penalidade por lutar caído.'},
- 		{'nome':'Maestria em Arremesso', 'descricao':'Bônus de dano de +1 com armas arremessadas por graduação.'},
+ 		{'nome':'Luta no Chão', 'descricao':'Sem penalidade por lutar caído'},
+ 		{'nome':'Maestria em Arremesso', 'descricao':'Bônus de dano de +1 com armas arremessadas por graduação'},
  		{'nome':'Mira Aprimorada', 'descricao':'Dobra os bônus de circunstância por mirar'},
  		{'nome':'Prender Arma', 'descricao':'Tentativa livre de desarme quando você se defende'},
  		{'nome':'Quebrar Aprimorado', 'descricao':'Sem penalidade para usar a ação quebrar'},
  		{'nome':'Quebrar Arma', 'descricao':'Tentativa livre de quebrar quando você se defende'},
  		{'nome':'Redirecionar', 'descricao':'Use Enganação para redirecionar um ataque que falhe para outro alvo'},
- 		{'nome':'Rolamento Defensivo', 'descricao':'Bônus de defesa ativa de +1 em Resistência por graduação.'},
+ 		{'nome':'Rolamento Defensivo', 'descricao':'Bônus de defesa ativa de +1 em Resistência por graduação'},
  		{'nome':'Saque Rápido', 'descricao':'Saque uma arma como uma ação livre'},
  		{'nome':'Artífice', 'descricao':'Use Especialidade: Magia para criar dispositivos mágicos temporários'},
  		{'nome':'Assustar', 'descricao':'Use Intimidação para fintar em combate'},
- 		{'nome':'Atraente', 'descricao':'Bônus de circunstância em perícias de interação baseado em sua aparência.'},
- 		{'nome':'Bem Informado', 'descricao':'Teste imediato de Investigação ou Percepção para saber alguma coisa.'},
- 		{'nome':'Bem Relacionado', 'descricao':'Chame ajuda ou consiga favores com um teste de Persuasão.'},
- 		{'nome':'Contatos', 'descricao':'Faça um teste inicial de Investigação em um minuto.'},
+ 		{'nome':'Atraente', 'descricao':'Bônus de circunstância em perícias de interação baseado em sua aparência'},
+ 		{'nome':'Bem Informado', 'descricao':'Teste imediato de Investigação ou Percepção para saber alguma coisa'},
+ 		{'nome':'Bem Relacionado', 'descricao':'Chame ajuda ou consiga favores com um teste de Persuasão'},
+ 		{'nome':'Contatos', 'descricao':'Faça um teste inicial de Investigação em um minuto'},
  		{'nome':'Empatia com Animais', 'descricao':'Use perícias de interação com animais'},
- 		{'nome':'Esconder-se à Plena Vista', 'descricao':'Esconda-se quando observado sem precisar de uma distração.'},
- 		{'nome':'Fascinar', 'descricao':'Use uma perícia de interação para prender a atenção dos outros.'},
- 		{'nome':'Faz Tudo', 'descricao':'Use qualquer perícia sem treinamento.'},
- 		{'nome':'Ferramentas Aprimoradas', 'descricao':'Sem penalidade por usar perícias sem as ferramentas apropriadas.'},
- 		{'nome':'Finta Ágil ', 'descricao':'Finte usando a perícia Acrobacia ou sua velocidade.'},
+ 		{'nome':'Esconder-se à Plena Vista', 'descricao':'Esconda-se quando observado sem precisar de uma distração'},
+ 		{'nome':'Fascinar', 'descricao':'Use uma perícia de interação para prender a atenção dos outros'},
+ 		{'nome':'Faz Tudo', 'descricao':'Use qualquer perícia sem treinamento'},
+ 		{'nome':'Ferramentas Aprimoradas', 'descricao':'Sem penalidade por usar perícias sem as ferramentas apropriadas'},
+ 		{'nome':'Finta Ágil ', 'descricao':'Finte usando a perícia Acrobacia ou sua velocidade'},
  		{'nome':'Idiomas', 'descricao':'Fale e compreenda idiomas adicionais'},
  		{'nome':'Inimigo Favorito', 'descricao':'Bônus de circunstância em testes contra um tipo de oponente'},
  		{'nome':'Inventor', 'descricao':'Use Tecnologia para criar dispositivos temporários'},
  		{'nome':'Maestria em Perícia', 'descricao':'Realize testes de rotina com uma perícia sob quaisquer circunstâncias'},
- 		{'nome':'Rastrear', 'descricao':'Use Percepção para seguir rastros.'},
- 		{'nome':'Ritualista', 'descricao':'Use Especialidade: Magia para criar e realizar rituais.'},
- 		{'nome':'Tontear', 'descricao':'Use Enganação ou Intimidação para deixar um oponente tonto.'},
- 		{'nome':'Zombar', 'descricao':'Use Enganação para desmoralizar em combate.'},
- 		{'nome':'Esforço Supremo', 'descricao':'Gaste um ponto heróico para ganhar um 20 efetivo em um teste específico.'},
- 		{'nome':'Inspirar', 'descricao':'Gaste um ponto heróico para conceder a seus aliados um bônus de circunstância de +1 por graduação.'},
- 		{'nome':'Liderança', 'descricao':'Gaste um ponto heróico para remover uma condição de um aliado.'},
- 		{'nome':'Sorte de Principiante', 'descricao':'Gaste um ponto heróico para ganhar 5 graduações temporárias em uma perícia.'},
- 		{'nome':'Sorte', 'descricao':'Rerole uma rolagem uma vez por graduação.'},
- 		{'nome':'Tomar a Iniciativa', 'descricao':'Gaste um ponto heróico para agir primeiro na ordem de iniciativa.'},
+ 		{'nome':'Rastrear', 'descricao':'Use Percepção para seguir rastros'},
+ 		{'nome':'Ritualista', 'descricao':'Use Especialidade: Magia para criar e realizar rituais'},
+ 		{'nome':'Tontear', 'descricao':'Use Enganação ou Intimidação para deixar um oponente tonto'},
+ 		{'nome':'Zombar', 'descricao':'Use Enganação para desmoralizar em combate'},
+ 		{'nome':'Esforço Supremo', 'descricao':'Gaste um ponto heróico para ganhar um 20 efetivo em um teste específico'},
+ 		{'nome':'Inspirar', 'descricao':'Gaste um ponto heróico para conceder a seus aliados um bônus de circunstância de +1 por graduação'},
+ 		{'nome':'Liderança', 'descricao':'Gaste um ponto heróico para remover uma condição de um aliado'},
+ 		{'nome':'Sorte de Principiante', 'descricao':'Gaste um ponto heróico para ganhar 5 graduações temporárias em uma perícia'},
+ 		{'nome':'Sorte', 'descricao':'Rerole uma rolagem uma vez por graduação'},
+ 		{'nome':'Tomar a Iniciativa', 'descricao':'Gaste um ponto heróico para agir primeiro na ordem de iniciativa'},
  		{'nome':'Avaliação', 'descricao':'Use Intuição para descobrir as habilidades de combate do oponente'},
- 		{'nome':'Benefício', 'descricao':'Ganhe uma gratificação ou benefício adicional.'},
+ 		{'nome':'Benefício', 'descricao':'Ganhe uma gratificação ou benefício adicional'},
  		{'nome':'Capanga', 'descricao':'Ganhe um seguidor ou capanga com (15 x graduação) pontos de poder'},
- 		{'nome':'De Pé', 'descricao':'Passe de caído para em pé como uma ação livre.'},
- 		{'nome':'Destemido', 'descricao':'Imune a efeitos de medo.'},
+ 		{'nome':'De Pé', 'descricao':'Passe de caído para em pé como uma ação livre'},
+ 		{'nome':'Destemido', 'descricao':'Imune a efeitos de medo'},
  		{'nome':'Duro de Matar', 'descricao':'Estabilize automaticamente quando moribundo'},
- 		{'nome':'Equipamento', 'descricao':'5 pontos de equipamento por graduação.'},
- 		{'nome':'Esforço Extraordinário', 'descricao':'Ganhe dois benefícios quando usando esforço extra.'},
- 		{'nome':'Interpor-se', 'descricao':'Sofra um ataque mirado contra um aliado.'},
- 		{'nome':'Memória Eidética', 'descricao':'Você se lembra de tudo, bônus de circunstância de +5 para se lembrar das coisas.'},
- 		{'nome':'Parceiro', 'descricao':'Ganhe um parceiro com (5 x graduação) pontos de poder.'},
+ 		{'nome':'Equipamento', 'descricao':'5 pontos de equipamento por graduação'},
+ 		{'nome':'Esforço Extraordinário', 'descricao':'Ganhe dois benefícios quando usando esforço extra'},
+ 		{'nome':'Interpor-se', 'descricao':'Sofra um ataque mirado contra um aliado'},
+ 		{'nome':'Memória Eidética', 'descricao':'Você se lembra de tudo, bônus de circunstância de +5 para se lembrar das coisas'},
+ 		{'nome':'Parceiro', 'descricao':'Ganhe um parceiro com (5 x graduação) pontos de poder'},
  		{'nome':'Segunda Chance', 'descricao':'Rerole um teste falho contra uma ameaça uma vez'},
- 		{'nome':'Tolerância Maior', 'descricao':'+5 em testes envolvendo tolerância.'},
+ 		{'nome':'Tolerância Maior', 'descricao':'+5 em testes envolvendo tolerância'},
  		{'nome':'Trabalho em Equipe', 'descricao':'+5 de bônus para ajudar em testes de equipe'},
- 		{'nome':'Transe', 'descricao':'Entre em um transe parecido com a morte que diminui as funções vitais.'},
+ 		{'nome':'Transe', 'descricao':'Entre em um transe parecido com a morte que diminui as funções vitais'},
 	);
 	
 
