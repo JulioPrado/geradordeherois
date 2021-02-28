@@ -50,12 +50,11 @@ function imprimirFicha() {
 	heroi.nome=document.getElementById('inputNome').value;
 	document.getElementById('nomeHeroi').innerHTML="<h3 style='text-align:center;'><strong>"+heroi.nome+"</strong></h3>"
      
-    conteudoImprimir = document.getElementById('ficha').innerHTML;
-    document.body.innerHTML = conteudoImprimir;
+    /*conteudoImprimir = document.getElementById('ficha').innerHTML;
+    document.body.innerHTML = conteudoImprimir;*/
     window.print();
 
-    setTimeout(document.location.reload(),1000);
-    /*delay para dar o reload*/
+    /*document.location.reload(); */
 }
 
 /*--------------------------Herói--*/
@@ -142,6 +141,11 @@ function gerarHeroi(){
 	 	document.getElementById('fichaFortitude').innerHTML=heroi.fortitude+heroi.vig+'='+heroi.fortitude+'+('+heroi.vig+')';
 	 	document.getElementById('fichaResistencia').innerHTML=heroi.resistencia+heroi.vig+'='+heroi.resistencia+'+('+heroi.vig+')';
 	 	document.getElementById('fichaVontade').innerHTML=heroi.vontade+heroi.pro+'='+heroi.vontade+'+('+heroi.pro+')';
+	 
+
+	 	/* mostrar quantos pontos foram gastos na ficha*/
+	 	console.log((heroi.for+heroi.agi+heroi.lut+heroi.pro+heroi.vig+heroi.des+heroi.int+heroi.pre)*2+heroi.esquiva+heroi.aparar+heroi.fortitude+heroi.vontade+heroi.resistencia+heroi.vantagens.length);
+
 	 }
 
 	 function definirGraduacoes(){
@@ -864,6 +868,6 @@ function gerarHeroi(){
 	 document.getElementById('ficha').style.display="block";
 	 preencherFicha();/* Imprime os dados em seus respectivos campos */
 	 trocarBotoes(); 
-	 window.scroll(0,455); /* scroll até a ficha*/
+	 window.scroll(0,505); /* scroll até a ficha*/
 
 } /* fim gerar heroi */

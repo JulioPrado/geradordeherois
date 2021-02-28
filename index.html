@@ -11,67 +11,69 @@
 </head>
 <body>
 	<div id="tela">
-		<h1 class="text-center">
-			Gerador aleatório de Heróis para 
-			</h1>
-			<a href="https://jamboeditora.com.br/produto/mutantes-malfeitores/" target="_blank">
-			<img src="logo.png" width="300" style="display:block;margin: 0 auto;">
-			</a>
-		<hr>
-		<div id="botaoGerar">
-			<input onchange="atualizaNP()" type="range" id="nivelPoder" name="nivelPoder" min="1" max="20" style="width:400px;display: block; margin: 0 auto">
-			<br>
-			<span style="display:block; text-align: center;">
-				NP:
-				<span id="NumeroNP">
-					11
+		<div id="telaInicial">
+			<h1 class="text-center">
+				Gerador aleatório de Heróis para 
+				</h1>
+				<a href="https://jamboeditora.com.br/produto/mutantes-malfeitores/" target="_blank">
+				<img src="logo.png" width="300" style="display:block;margin: 0 auto;">
+				</a>
+			<hr>
+			<div id="botaoGerar">
+				<input onchange="atualizaNP()" type="range" id="nivelPoder" name="nivelPoder" min="1" max="20" style="width:400px;display: block; margin: 0 auto">
+				<br>
+				<span style="display:block; text-align: center;">
+					NP:
+					<span id="NumeroNP">
+						11
+					</span>
 				</span>
-			</span>
-			<br>
-			<button style="background-color: red; color: white;display: block; margin: 0 auto;" onclick="gerarHeroi();">
-				Gerar herói
-			</button>
-		</div>
-		<div id="botaoImprimir" style="display: none;">
-			<button style="background-color: red; color: white;" onclick="tentarNovamente()">
-					Tentar novamente
-			</button>
-		</div>
-		<div>
-			<p>
-				Pontos para distribuir: 
-				<span id="pontosDistribuir">
-				</span>
-				<br><span>(pdms podem exceder esse limite)</span>
-			</p>
-			<h5>LIMITES</h5>
-			<span>
-				Ataque + Efeito: 
-				<span class="DobroNP">
+				<br>
+				<button style="display: block; margin: 0 auto;" type="button" class="btn btn-danger" onclick="gerarHeroi();">
+					Gerar herói
+				</button>
+			</div>
+			<div id="botaoImprimir" style="display: none;">
+				<button type="button" class="btn btn-danger" onclick="tentarNovamente()">
+						Tentar novamente
+				</button>
+			</div>
+			<div>
+				<p>
+					Pontos para distribuir: 
+					<span id="pontosDistribuir">
+					</span>
+					<br><span>(pdms podem exceder esse limite)</span>
+				</p>
+				<h5>LIMITES</h5>
+				<span>
+					Ataque + Efeito: 
+					<span class="DobroNP">
+					</span>
+					<br>
+					<span>
+						(se efeito não precisar de ataque, limite=NP).
+					</span>
 				</span>
 				<br>
 				<span>
-					(se efeito não precisar de ataque, limite=NP).
+					Esquiva/Aparar + Resistência:
+					<span class="DobroNP">
+					</span>
 				</span>
-			</span>
-			<br>
-			<span>
-				Esquiva/Aparar + Resistência:
-				<span class="DobroNP">
+				<br>
+				<span>
+					Fortitude + Vontade: 
+					<span class="DobroNP">
+					</span>
 				</span>
-			</span>
-			<br>
-			<span>
-				Fortitude + Vontade: 
-				<span class="DobroNP">
+				<br>
+				<span>
+				Habilidade + Perícia + Vantagem: 
+					<span id="limitePericia">
+					</span>
 				</span>
-			</span>
-			<br>
-			<span>
-			Habilidade + Perícia + Vantagem: 
-				<span id="limitePericia">
-				</span>
-			</span>
+			</div>
 		</div>
 		<div id="ficha" style="display: none;" class="borda">
 			<img src="logo.png" width="200" style="display:block; opacity: 0.5;">
@@ -79,7 +81,7 @@
 			<div id="nomeHeroi">
 				<form method="get">
 					<input type="text" id="inputNome" placeholder="Nome do herói">
-					<button onclick="imprimirFicha()" style="background-color: blue; color: white;">
+					<button onclick="imprimirFicha()" type="button" class="btn btn-info">
 					Finalizar e imprimir
 					</button>
 				</form>

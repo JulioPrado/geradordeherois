@@ -18,6 +18,10 @@ div#tela{
 	margin: 0 auto;
 }
 
+div#telaInicial{
+	margin-bottom: 60px;
+}
+
 
 .clear{ 
     clear:both; 
@@ -94,8 +98,21 @@ div#ficha{
 
 @media print {
 	body{
-			font-size: 1.3em!important;
-		}			
+			/*font-size: 1.3em!important;*/
+		}	
+	  body * {
+	    visibility: hidden;
+	  }
+
+	  #ficha, #ficha * {
+	    visibility: visible;
+	  }
+	  #ficha {
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	  }
+		
 }
 
 /* Extra small devices) */
