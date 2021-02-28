@@ -143,7 +143,7 @@ function gerarHeroi(){
 	 	document.getElementById('fichaVontade').innerHTML=heroi.vontade+heroi.pro+'='+heroi.vontade+'+('+heroi.pro+')';
 	 
 
-	 	/* mostrar quantos pontos foram gastos na ficha*/
+	 	/* mostrar +/- quantos pontos foram gastos na ficha*/
 	 	console.log((heroi.for+heroi.agi+heroi.lut+heroi.pro+heroi.vig+heroi.des+heroi.int+heroi.pre)*2+heroi.esquiva+heroi.aparar+heroi.fortitude+heroi.vontade+heroi.resistencia+heroi.vantagens.length);
 
 	 }
