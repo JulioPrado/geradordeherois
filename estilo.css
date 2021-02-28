@@ -13,7 +13,7 @@ body{
 }
 
 div#tela{
-	width: 600px;
+	max-width: 600px;
 	display: block;
 	margin: 0 auto;
 }
@@ -119,7 +119,13 @@ div#ficha{
 
 /* Extra small devices) */
 
-@media (max-width: 800px){
+@media (max-width: 576px){
+	footer span{
+		font-size: .6em;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 800px){
 	footer span{
 		font-size: .8em;
   }
