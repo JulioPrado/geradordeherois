@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Gerador De Heróis</title>
+	<title>Gerador De Heróis (não oficial)</title>
 	<link rel="stylesheet" href="estilo.css">
+	<!--     BOOTSTRAP              -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script  src="js.js"></script>
 </head>
 <body>
 	<div id="tela">
-		<h1>
-			Gerador de Heróis para Mutantes&Malfeitores 3ªed
-		</h1>
+		<h1 class="text-center">
+			Gerador aleatório de Heróis para 
+			</h1>
+			<a href="https://jamboeditora.com.br/produto/mutantes-malfeitores/" target="_blank">
+			<img src="logo.png" width="300" style="display:block;margin: 0 auto;">
+			</a>
+		<hr>
 		<div id="botaoGerar">
 			<button style="background-color: red; color: white;" onclick="gerarHeroi();">
 				Gerar herói
 			</button>
 			
-			<input onclick="atualizaNP()" type="range" id="nivelPoder" name="nivelPoder" min="1" max="20" >
+			<input onmousemove="atualizaNP()" type="range" id="nivelPoder" name="nivelPoder" min="1" max="20" >
 			<span>
 				NP:
 			</span>
@@ -66,6 +74,7 @@
 			</span>
 		</div>
 		<div id="ficha" style="display: none;" class="borda">
+			<img src="logo.png" width="200" style="display:block; opacity: 0.5;">
 			
 			<div id="nomeHeroi">
 				<form method="get">
@@ -76,6 +85,7 @@
 				</form>
 			</div>
 
+			 
 			<h3 class="right">
 				NP: 
 				<span id="fichaNp">
@@ -83,19 +93,13 @@
 				</span>
 			</h3>
 			
-			<p>
 				<!-- 
 				Conceito: 
 				<span id="fichaConceito">
 					
 				</span>
 				-->
-				
-				Descritor:
-				<span id="fichaDescritor">
-					
-				</span>
-			</p>
+			<!--
 			<p>
 				Gênero: 
 				<span id="fichaGenero">
@@ -112,6 +116,7 @@
 					
 				</span>
 			</p>
+			-->
 			<p>
 				Força:
 				<span id="fichaForca"></span>
@@ -147,51 +152,61 @@
 					<span id="fichaFortitude">
 					</span>
 					<br>
-					Resistência(Vig):
-					<span id="fichaResistencia">
-					</span>
-					<br>
 					Vontade(Pro): 
 					<span id="fichaVontade">
+					</span>
+					<br>
+					Resistência(Vig):
+					<span id="fichaResistencia">
 					</span>
 				</p>
 			</div>
 			<div class="borda">
-				<h5>Ataques</h5>
-				<p>ataque CaC 
-					<span>0</span>
-					<br><span> descrição ausydausyd  uyasd uyg qudyasudy u gqudgausdyg asdiausd qu.
+				<p><h5>Ataques</h5>
+					(Descritores:
+					<span id="fichaDescritor">
+						
+					</span>)</p>
+				<p>
+					
+				</p>
+				<p>
+					Combate CaC: 
+					<span id="cacGrad">
+							
+					</span>
+					<br>
+					<span id="cacPoderes">
 					</span>
 				</p>
-				<p>ataque a dist
-					<span>0</span>
-					<br><span> descrição ausydausyd  uyasd uyg qudyasudy u gqudgausdyg asdiausd qu.
+				<p>
+					Combate a distancia:
+					<span id="distGrad">
+							
+					</span>
+					
+					<br>
+					<span id="distPoderes">
 					</span>
 				</p>
 			</div>
 			<div>
-				<h5>Vantagens</h5>
-				<span>nomeVantagem 0 ,</span>
-				<span>nomeVantagem 0 ,</span>
-				<span>nomeVantagem 0 ,</span>
-				<span>nomeVantagem 0 ,</span>
+					<h5>Poderes & dispositivos</h5>
+					<span id="fichaPoderes">
+						
+					</span>
 			</div>
-			<hr>
 			<div>
 				<h5>Perícias</h5>
 				<span id="fichaPericias"></span>
 			</div>
-			<hr>
 			<div>
-				<h5>Poderes & dispositivos</h5>
-				<span id="fichaPoderes">
-					
-				</span>
+				<h5>Vantagens</h5>
+				<span id="fichaVantagens"></span>
 			</div>
 
-
-
-		</div>
+		</div> <!-- fim ficha -->
 	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
 </body>
 </html>
