@@ -54,7 +54,7 @@ function imprimirFicha() {
     document.body.innerHTML = conteudoImprimir;*/
     window.print();
 
-    document.location.reload();
+    /*document.location.reload(); */
 }
 
 /*--------------------------Herói--*/
@@ -874,6 +874,8 @@ function gerarHeroi(){
 	 preencherFicha();/* Imprime os dados em seus respectivos campos */
 	 trocarBotoes(); 
 
-	window.scroll(0,505); /* scroll até a ficha*/
+
+
+	window.scroll(0,$( "#ficha" ).offset().top); /* scroll até a ficha*/
 
 } /* fim gerar heroi */
