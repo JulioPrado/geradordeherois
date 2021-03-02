@@ -54,7 +54,7 @@ function imprimirFicha() {
     document.body.innerHTML = conteudoImprimir;*/
     window.print();
 
-    /*document.location.reload(); */
+    document.location.reload();
 }
 
 /*--------------------------Herói--*/
@@ -120,9 +120,9 @@ function gerarHeroi(){
 	 	for (var i = 0; i<heroi.poderes.length; i++) {
 	 		document.getElementById('fichaPoderes').append(heroi.poderes[i].nome+' '+heroi.poderes[i].grad);
 	 		if (heroi.poderes[i].alcance=='Perto'){
-	 			document.getElementById('cacPoderes').append(heroi.poderes[i].nome+' '+heroi.poderes[i].grad);
+	 			document.getElementById('cacPoderes').append(heroi.poderes[i].nome+' '+heroi.poderes[i].grad+' ');
 	 		} else if(heroi.poderes[i].alcance=='À Distância'){
-	 			document.getElementById('distPoderes').append(heroi.poderes[i].nome+' '+heroi.poderes[i].grad);
+	 			document.getElementById('distPoderes').append(heroi.poderes[i].nome+' '+heroi.poderes[i].grad+' ');
 	 		}
 	 		if (i<heroi.poderes.length-1) {
 	 			document.getElementById('fichaPoderes').append(', ');
@@ -176,10 +176,6 @@ function gerarHeroi(){
 	 		heroi.fortitude=randomAte(heroi.np/2);
 	 		heroi.resistencia=randomAte(heroi.np/2);
 	 		heroi.vontade=randomAte(heroi.np/2);
-	 	}
-
-	 	function definirPericias(){
-
 	 	}
 
 	  definirHabilidades();
@@ -877,6 +873,7 @@ function gerarHeroi(){
 	 document.getElementById('ficha').style.display="block";
 	 preencherFicha();/* Imprime os dados em seus respectivos campos */
 	 trocarBotoes(); 
-	 window.scroll(0,505); /* scroll até a ficha*/
+
+	window.scroll(0,505); /* scroll até a ficha*/
 
 } /* fim gerar heroi */
