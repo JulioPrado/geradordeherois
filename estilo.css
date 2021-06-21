@@ -5,15 +5,16 @@ html{
 
 body{
 	font: "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif; 
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	min-height: 100vh;
 	margin: 0;
 	padding: 0;
 	background-color: blue;
 }
 
 div#tela{
-	width: 600px;
+	width: 95vw;
+	max-width: 600px;
 	display: block;
 	margin: 0 auto;
 }
@@ -123,6 +124,8 @@ div#ficha{
 	footer span{
 		font-size: .6em;
   }
+
+  
 }
 
 @media (min-width: 577px) and (max-width: 800px){
