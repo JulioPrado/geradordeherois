@@ -5,11 +5,10 @@ html{
 
 body{
 	font: "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif; 
-	width: 100vw;
+	width: 100%;
 	min-height: 100vh;
 	margin: 0;
 	padding: 0;
-	background-color: blue;
 }
 
 div#tela{
