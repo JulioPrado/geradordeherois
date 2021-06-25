@@ -848,24 +848,43 @@ function gerarHeroi(){
 	 		{'nome':'Combate à Distancia', 'grad':heroi.ataquedist}
 	 		);
 	 }
+
+/* se o item randômico já tem no array, ele gera outro item randômico, até achar um que não tenha. */
+function colocarAleatNoArray(listaOrigem,listaDestino) {
+
+	do{
+		var item = listaOrigem[randomAte(listaOrigem.length)];
+		console.log('Entrou no laço.')
+
+		if (listaDestino.indexOf(item) > -1) {
+		}else{
+			listaDestino.push(item);
+			 //senão dá looping infinito
+			 break;
+		}
+	 }while (listaDestino.indexOf(item) > -1);
+	}
+
+
+
  /*  Atribuindo os poderes --------------------------*/
 	numPoderes = (heroi.np/3.5).toFixed();/* arredonda pra cima*/
 	for (let i = 0; i < numPoderes; i++) { 	
-	 heroi.poderes.push(listaPoderes[randomAte(listaPoderes.length)]);
-	 heroi.poderes[i].grad=randomEntre(heroi.np/3,heroi.np) 
+		 colocarAleatNoArray(listaPoderes,heroi.poderes);
+		 heroi.poderes[i].grad=randomEntre(heroi.np/3,heroi.np) 
 	 }
 
 /*  Atribuindo as perícias --------------------------*/
 	numPericias = (heroi.np/2).toFixed();/* arredonda pra cima*/
-	for (let i = 0; i < numPericias; i++) { 	
-	 heroi.pericias.push(listaPericias[randomAte(listaPericias.length)]);
-	 heroi.pericias[i+2].grad=randomEntre(1,10) /* o i+2 é porque as duas primeiras posições do heroi.pericias já estão preenchidas com as pericias de combate. */
+	for (let i = 0; i < numPericias; i++) { 
+		 colocarAleatNoArray(listaPericias,heroi.pericias);	
+		 heroi.pericias[i+2].grad=randomEntre(1,10) /* o i+2 é porque as duas primeiras posições do heroi.pericias já estão preenchidas com as pericias de combate. */
 	 }
 
 /*  Atribuindo as vantagens  --------------------------*/
 	numVantagens = (heroi.np/2).toFixed();/* arredonda pra cima*/
-	for (let i = 0; i < numVantagens; i++) { 	
-	 heroi.vantagens.push(listaVantagens[randomAte(listaVantagens.length)]);
+		for (let i = 0; i < numVantagens; i++) { 
+		colocarAleatNoArray(listaVantagens,heroi.vantagens);
 	 }
 
 	 definirGraduacoes();
